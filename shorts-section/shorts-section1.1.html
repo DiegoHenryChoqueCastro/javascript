@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shorts Section</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.shorts-title {
+			color: #030846;
+			text-align: center;
+			font-family: arial, sans-serif;
+			font-size: 2rem;
+			font-weight: 800;
+			padding-bottom: 20px;
+		}
+
+		.shorts-grid {
+			display: flex;
+			gap: 20px;
+			justify-content: center;
+		}
+
+		.shorts-card {
+			flex-shrink: 0;
+			width: 212px;
+			height: 376px;
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+			border-radius: 12px;
+			transition: transform 0.3s ease;
+		}
+
+		.shorts-card:hover {
+			transform: translateY(-5px);
+		}
+
+		.short-poster {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		.short-video-preview {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: none;
+		}
+
+		.short-progress-bar {
+			background-color: rgba(255, 255, 255, 0.3);
+			width: 0%;
+			height: 3px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 4;
+		}
+
+		.short-progress-fill {
+			width: 0%;
+			height: 100%;
+			background-color: #ff0000;
+			border-radius: 0 2px 2px 0;
+		}
+
+		.short-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.2) 60%, rgba(0,0,0,0) 100%);
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding: 15px;
+			transition: background .3s ease;
+			z-index: 2;
+			font-family: arial, sans-serif;
+			color: #ffffff;
+		}
+
+		.short-card-title {
+			font-size: 1rem;
+			font-weight: 700;
+			margin: 0 0 6px;
+			line-height: 1.3;
+			text-align: left;
+		}
+		
+		.short-card-views {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			font-size: .75rem;
+			font-weight: 500;
+			margin: 0;
+			color: #ffffffd9;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, .8);
+		}
+
+		.short-card-views svg {
+			width: 18px;
+			height: 18px;
+			fill: currentColor;
+			opacity: 0.85;
+		}
+
+		@media(max-width: 1150px){
+			.shorts-grid{
+				justify-content:flex-start;
+				scrollbar-width: none;
+				overflow-x: auto;
+				overflow-y: hidden;
+			}
+			.shorts-grid::-webkit-scrollbar {
+			  display: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="shorts-section">
+		<div class="shorts-container">
+			<h2 class="shorts-title">Reels</h2>
+			<div class="shorts-grid">
+				<div class="shorts-card">
+					<img class="short-poster" src="images/111486c0-6675-4228-979c-bc7b5a0b8308.jpg">
+					<video src="videos/111486c0-6675-4228-979c-bc7b5a0b8308.mp4" class="short-video-preview" muted></video>
+					<div class="short-progress-bar">
+						<div class="short-progress-fill">
+						</div>
+					</div>
+					<div class="short-overlay">
+						<h3 class="short-card-title">
+							Día del Hincha
+						</h3>
+						<p class="short-card-views">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"></path></svg>
+							<span>573 vistas</span>
+						</p>
+					</div>
+				</div>
+				<div class="shorts-card">
+					<img class="short-poster" src="images/2933ecd2-820a-46c5-b53d-146e3b829ff2.jpg">
+					<video src="videos/2933ecd2-820a-46c5-b53d-146e3b829ff2.mp4" class="short-video-preview" muted></video>
+					<div class="short-progress-bar">
+						<div class="short-progress-fill">
+						</div>
+					</div>
+					<div class="short-overlay">
+						<h3 class="short-card-title">
+							Día del Hincha
+						</h3>
+						<p class="short-card-views">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"></path></svg>
+							<span>573 vistas</span>
+						</p>
+					</div>
+				</div>
+				<div class="shorts-card">
+					<img class="short-poster" src="images/111486c0-6675-4228-979c-bc7b5a0b8308.jpg">
+					<video src="videos/111486c0-6675-4228-979c-bc7b5a0b8308.mp4" class="short-video-preview" muted></video>
+					<div class="short-progress-bar">
+						<div class="short-progress-fill">
+						</div>
+					</div>
+					<div class="short-overlay">
+						<h3 class="short-card-title">
+							Día del Hincha
+						</h3>
+						<p class="short-card-views">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"></path></svg>
+							<span>573 vistas</span>
+						</p>
+					</div>
+				</div>
+				<div class="shorts-card">
+					<img class="short-poster" src="images/2933ecd2-820a-46c5-b53d-146e3b829ff2.jpg">
+					<video src="videos/2933ecd2-820a-46c5-b53d-146e3b829ff2.mp4" class="short-video-preview" muted></video>
+					<div class="short-progress-bar">
+						<div class="short-progress-fill">
+						</div>
+					</div>
+					<div class="short-overlay">
+						<h3 class="short-card-title">
+							Día del Hincha
+						</h3>
+						<p class="short-card-views">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"></path></svg>
+							<span>573 vistas</span>
+						</p>
+					</div>
+				</div>
+				<div class="shorts-card">
+					<img class="short-poster" src="images/111486c0-6675-4228-979c-bc7b5a0b8308.jpg">
+					<video src="videos/111486c0-6675-4228-979c-bc7b5a0b8308.mp4" class="short-video-preview" muted></video>
+					<div class="short-progress-bar">
+						<div class="short-progress-fill">
+						</div>
+					</div>
+					<div class="short-overlay">
+						<h3 class="short-card-title">
+							Día del Hincha
+						</h3>
+						<p class="short-card-views">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"></path></svg>
+							<span>573 vistas</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+		    const cards = document.querySelectorAll(".shorts-card");
+		    cards.forEach(card => {
+		        const video = card.querySelector(".short-video-preview");
+		        const poster = card.querySelector(".short-poster");
+		        const progressBar = card.querySelector(".short-progress-bar");
+		        const progressFill = card.querySelector(".short-progress-fill");
+		        let progressInterval = null;
+		        card.addEventListener("mouseenter", () => {
+		            video.currentTime = 0;
+		            video.play().catch(error => {
+		                console.log("Error al reproducir:", error);
+		            });
+		            video.style.display = "block";
+		            poster.style.display = "none";
+		            progressBar.style.width = "100%";
+		            const duration = video.duration && !isNaN(video.duration) ? video.duration : 3;
+		            let startTime = Date.now();
+		            progressFill.style.width = "0%";
+		            clearInterval(progressInterval);
+		            progressInterval = setInterval(() => {
+		                let elapsed = (Date.now() - startTime) / 1000;
+		                let percentage = (elapsed / duration) * 100;
+		                if (percentage >= 100) {
+		                    percentage = 100;
+		                    clearInterval(progressInterval);
+		                }
+		                progressFill.style.width = percentage + "%";
+		                if (elapsed >= duration) {
+		                    resetCardState(video, poster, progressFill, progressInterval);
+		                }
+		            }, 50);
+		        });
+		        card.addEventListener("mouseleave", () => {
+		            clearInterval(progressInterval);
+		            resetCardState(video, poster, progressFill, progressInterval);
+		        });
+		    });
+		    function resetCardState(video, poster, progressFill, interval) {
+		        clearInterval(interval);
+		        video.pause();
+		        video.currentTime = 0;
+		        video.style.display = "none";
+		        progressFill.style.width = "0%";
+		    }
+		});
+	</script>
+</body>
+</html>
